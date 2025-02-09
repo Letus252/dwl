@@ -13,12 +13,16 @@ static const char *fonts[]                 = {"monospace:size=10"};
 static const float rootcolor[]             = COLOR(0x000000ff);
 /* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.1f, 0.1f, 0.1f, 1.0f}; /* You can also use glsl colors */
-static uint32_t colors[][3]                = {
-	/*               fg          bg          border    */
-	[SchemeNorm] = { 0xbbbbbbff, 0x222222ff, 0x444444ff },
-	[SchemeSel]  = { 0xeeeeeeff, 0x005577ff, 0x005577ff },
-	[SchemeUrg]  = { 0,          0,          0x770000ff },
-};
+//static uint32_t colors[][3]                = {
+//	/*               fg          bg          border    */
+//	[SchemeNorm] = { 0xbbbbbbff, 0x222222ff, 0x444444ff },
+//	[SchemeSel]  = { 0xeeeeeeff, 0x005577ff, 0x005577ff },
+//	[SchemeUrg]  = { 0,          0,          0x770000ff },
+//};
+
+
+#include "/home/f0x/Documents/Themes/dwl/default_dwl.h" //Default theme
+//#include "/home/f0x/Documents/Themes/dwl/nord_dwm.h" //Custom color theme
 
 /* tagging - TAGCOUNT must be no greater than 31 */
 static char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -34,6 +38,7 @@ static const Rule rules[] = {
 	{ "firefox_EXAMPLE",  NULL,       1 << 8,       0,          0,      0,         -1 }, /* Start on ONLY tag "9" */
 	{ "st",               NULL,       0,            0,          1,      1,         -1 },
 	{ "konsole",          NULL,       0,            0,          1,      1,         -1 },
+    { "wev",              NULL,       0,            0,          0,      1,         -1 },
 };
 
 /* layout(s) */
