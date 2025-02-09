@@ -1889,17 +1889,11 @@ keybinding(uint32_t mods, xkb_keysym_t sym)
 	 * processing keys, rather than passing them on to the client for its own
 	 * processing.
 	 */
-	const Client *c = focustop(selmon);
 	const Key *k;
 	for (k = keys; k < END(keys); k++) {
 		if (CLEANMASK(mods) == CLEANMASK(k->mod)
-			&& sym == k->keysym && k->func) {
-			if (c && c->isfullscreen) {
-				if ((void*)k->func == (void*)togglefullscreen)
-					k->func(&k->arg);
-			} else {
-				k->func(&k->arg);
-			}
+				&& sym == k->keysym && k->func) {
+			k->func(&k->arg);
 			return 1;
 		}
 	}
