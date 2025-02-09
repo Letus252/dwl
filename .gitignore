@@ -1,6 +1,6 @@
-dwl
+*.rej
+*.h
 *.o
-*-protocol.c
-*-protocol.h
-.ccls-cache
-config.h
+*.orig
+patches
+dwl
