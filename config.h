@@ -174,6 +174,27 @@ static const Key keys[] = {
 	TAGKEYS(          XKB_KEY_9, XKB_KEY_parenleft,                  8),
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q,          quit,           {0} },
 
+// Custom keybinds
+    { 0,                                   XKB_KEY_Print,                spawn, SHCMD("flameshot full") },
+    { WLR_MODIFIER_CTRL,                   XKB_KEY_Print,                spawn, SHCMD("flameshot gui") },
+    { MODKEY|WLR_MODIFIER_CTRL,            XKB_KEY_Escape,               spawn, SHCMD("xkill") },
+    { WLR_MODIFIER_LOGO,                   XKB_KEY_l,                    spawn, SHCMD("slock") },
+    { WLR_MODIFIER_CTRL|WLR_MODIFIER_LOGO, XKB_KEY_l,                    spawn, SHCMD("systemctl suspend") },
+    { WLR_MODIFIER_CTRL|WLR_MODIFIER_LOGO, XKB_KEY_r,                    spawn, SHCMD("shutdown -r now") },
+    { WLR_MODIFIER_CTRL|WLR_MODIFIER_LOGO, XKB_KEY_t,                    spawn, SHCMD("shutdown now") },
+    { WLR_MODIFIER_LOGO,                   XKB_KEY_e,                    spawn, SHCMD("dolphin") },
+    { 0,                                   XKB_KEY_XF86AudioRaiseVolume, spawn, SHCMD("amixer set Master 5%+") },
+    { 0,                                   XKB_KEY_XF86AudioLowerVolume, spawn, SHCMD("amixer set Master 5%-") },
+    { 0,                                   XKB_KEY_XF86AudioMute,        spawn, SHCMD("amixer set Master toggle") },
+    { 0,                                   XKB_KEY_XF86AudioPause,       spawn, SHCMD("playerctl play-pause") },
+    { 0,                                   XKB_KEY_XF86AudioPlay,        spawn, SHCMD("playerctl play-pause") },
+    { 0,                                   XKB_KEY_XF86AudioPrev,        spawn, SHCMD("playerctl previous") },
+    { 0,                                   XKB_KEY_XF86AudioNext,        spawn, SHCMD("playerctl next") },
+    { 0,                                   XKB_KEY_XF86Tools,            spawn, SHCMD("pavucontrol") },
+    { WLR_MODIFIER_CTRL,                   XKB_KEY_Up,                   spawn, SHCMD("'/home/f0x/Documents/Bash Scripts/SpotifyVolumeUp.sh'") },
+    { WLR_MODIFIER_CTRL,                   XKB_KEY_Down,                 spawn, SHCMD("'/home/f0x/Documents/Bash Scripts/SpotifyVolumeDown.sh'") },
+
+
 	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
 	{ WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_Terminate_Server, quit, {0} },
 	/* Ctrl-Alt-Fx is used to switch to another VT, if you don't know what a VT is
