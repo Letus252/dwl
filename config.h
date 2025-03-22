@@ -175,13 +175,13 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q,          quit,           {0} },
 
 // Custom keybinds
-    { 0,                                   XKB_KEY_Print,                spawn, SHCMD("flameshot full") },
-    { WLR_MODIFIER_CTRL,                   XKB_KEY_Print,                spawn, SHCMD("flameshot gui") },
+    { 0,                                   XKB_KEY_Print,                spawn, SHCMD("grim") },
+    { WLR_MODIFIER_CTRL,                   XKB_KEY_Print,                spawn, SHCMD("grim -g \"$(slurp </dev/null)\" - | swappy -f -") },
     { MODKEY|WLR_MODIFIER_CTRL,            XKB_KEY_Escape,               spawn, SHCMD("xkill") },
-    { WLR_MODIFIER_LOGO,                   XKB_KEY_l,                    spawn, SHCMD("slock") },
+    { WLR_MODIFIER_LOGO,                   XKB_KEY_l,                    spawn, SHCMD("waylock -init-color 0x000000 -input-color 0x005577 -fail-color 0xCC3333") },
     { WLR_MODIFIER_CTRL|WLR_MODIFIER_LOGO, XKB_KEY_l,                    spawn, SHCMD("systemctl suspend") },
-    { WLR_MODIFIER_CTRL|WLR_MODIFIER_LOGO, XKB_KEY_r,                    spawn, SHCMD("shutdown -r now") },
-    { WLR_MODIFIER_CTRL|WLR_MODIFIER_LOGO, XKB_KEY_t,                    spawn, SHCMD("shutdown now") },
+    { WLR_MODIFIER_CTRL|WLR_MODIFIER_LOGO, XKB_KEY_r,                    spawn, SHCMD("pgrep pacman > /dev/null && echo \"Pacman is currently running. Shutdown aborted.\" || { echo \"Shutting down now.\"; shutdown -r now; }") },
+    { WLR_MODIFIER_CTRL|WLR_MODIFIER_LOGO, XKB_KEY_t,                    spawn, SHCMD("pgrep pacman > /dev/null && echo \"Pacman is currently running. Shutdown aborted.\" || { echo \"Shutting down now.\"; shutdown now; }") },
     { WLR_MODIFIER_LOGO,                   XKB_KEY_e,                    spawn, SHCMD("dolphin") },
     { 0,                                   XKB_KEY_XF86AudioRaiseVolume, spawn, SHCMD("amixer set Master 5%+") },
     { 0,                                   XKB_KEY_XF86AudioLowerVolume, spawn, SHCMD("amixer set Master 5%-") },
@@ -191,8 +191,8 @@ static const Key keys[] = {
     { 0,                                   XKB_KEY_XF86AudioPrev,        spawn, SHCMD("playerctl previous") },
     { 0,                                   XKB_KEY_XF86AudioNext,        spawn, SHCMD("playerctl next") },
     { 0,                                   XKB_KEY_XF86Tools,            spawn, SHCMD("pavucontrol") },
-    { WLR_MODIFIER_CTRL,                   XKB_KEY_Up,                   spawn, SHCMD("'/home/f0x/Documents/Bash Scripts/SpotifyVolumeUp.sh'") },
-    { WLR_MODIFIER_CTRL,                   XKB_KEY_Down,                 spawn, SHCMD("'/home/f0x/Documents/Bash Scripts/SpotifyVolumeDown.sh'") },
+    { WLR_MODIFIER_CTRL,                   XKB_KEY_Up,                   spawn, SHCMD("'/home/f0x/Documents/Bash_Scripts/SpotifyVolumeUp.sh'") },
+    { WLR_MODIFIER_CTRL,                   XKB_KEY_Down,                 spawn, SHCMD("'/home/f0x/Documents/Bash_Scripts/SpotifyVolumeDown.sh'") },
 
 
 	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
