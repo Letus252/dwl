@@ -60,8 +60,13 @@ static const MonitorRule monrules[] = {
 	/* example of a HiDPI laptop monitor:
 	{ "eDP-1",    0.5f,  1,      2,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 	*/
-	/* defaults */
-	{ NULL,       0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+
+/* ASUS TUF GAMING VG249Q1A (PRIMARY) */
+    { "DP-3",        0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,       0,   0 },
+/* DELL P2422H (on the left) */
+    { "HDMI-A-1",    0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1920,   0 },
+/* fallback */
+	{ NULL,          0.55f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,      -1,  -1 },
 };
 
 /* keyboard */
@@ -190,7 +195,6 @@ static const Key keys[] = {
     { 0,                                   XKB_KEY_XF86AudioPlay,        spawn, SHCMD("playerctl play-pause") },
     { 0,                                   XKB_KEY_XF86AudioPrev,        spawn, SHCMD("playerctl previous") },
     { 0,                                   XKB_KEY_XF86AudioNext,        spawn, SHCMD("playerctl next") },
-    { 0,                                   XKB_KEY_XF86Tools,            spawn, SHCMD("pavucontrol") },
     { WLR_MODIFIER_CTRL,                   XKB_KEY_Up,                   spawn, SHCMD("'/home/f0x/Documents/Bash_Scripts/SpotifyVolumeUp.sh'") },
     { WLR_MODIFIER_CTRL,                   XKB_KEY_Down,                 spawn, SHCMD("'/home/f0x/Documents/Bash_Scripts/SpotifyVolumeDown.sh'") },
 
