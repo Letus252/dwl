@@ -197,6 +197,11 @@ static const Key keys[] = {
     { 0,                                   XKB_KEY_XF86AudioNext,        spawn, SHCMD("playerctl next") },
     { WLR_MODIFIER_CTRL,                   XKB_KEY_Up,                   spawn, SHCMD("'/home/f0x/Documents/Bash_Scripts/SpotifyVolumeUp.sh'") },
     { WLR_MODIFIER_CTRL,                   XKB_KEY_Down,                 spawn, SHCMD("'/home/f0x/Documents/Bash_Scripts/SpotifyVolumeDown.sh'") },
+    { MODKEY,                              XKB_KEY_semicolon,            spawn, SHCMD("killall -SIGUSR1 gpu-screen-recorder") },
+    { MODKEY|WLR_MODIFIER_SHIFT,           XKB_KEY_colon,                spawn, SHCMD("killall -SIGINT gpu-screen-recorder") },
+
+
+
 
 
 	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
