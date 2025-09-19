@@ -1910,7 +1910,7 @@ keybinding(uint32_t mods, xkb_keysym_t sym)
 		if (CLEANMASK(mods) == CLEANMASK(k->mod)
 				&& sym == k->keysym && k->func) {
 			if (c && c->isfullscreen) {
-				if (k->func == togglefullscreen) {
+				if (k->func == togglefullscreen || k->func == spawn) {
 					k->func(&k->arg);
 					return 1;
 				}
